@@ -20,4 +20,4 @@ export const storage = multer.diskStorage({
 });
 export const fileFilter = (req, file, cb) => {};
 export const files = [{ name: 'characterImage' }, { name: 'movieImage' }, { name: 'genreImage' }];
-export const API_URL = 'http://localhost:3000/';
+export const API_URL = `http://localhost:${process.env.PORT || 3000}/`;
