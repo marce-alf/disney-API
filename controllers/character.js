@@ -11,7 +11,6 @@ export default {
     try {
       const { id } = req.params;
       const { nombre, edad, movies } = req.query;
-      console.log(nombre, edad, movies);
       if (nombre) {
         const characters = await Personaje.findAll({
           where: { nombre: { [Op.like]: `%${nombre}%` } },
@@ -115,7 +114,6 @@ export default {
   async deleteCharacter(req, res, next) {
     try {
       const { id } = req.params;
-      console.log(id);
       const character = await Personaje.findByPk(id);
       deleteFile(character.imagen);
       await character.destroy();

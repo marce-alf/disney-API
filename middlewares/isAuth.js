@@ -4,7 +4,6 @@ import { jwtsecret } from '../config/config.js';
 export default (req, _, next) => {
   try {
     const header = req.get('Authorization');
-    console.log(header);
     if (!header) {
       const err = new Error('Could not get auth header. Not authenticated!');
       err.status = 401;

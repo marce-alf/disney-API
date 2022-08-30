@@ -33,7 +33,6 @@ export default {
         return res.status(200).json({ movies });
       }
       if (order) {
-        console.log(order);
         const movies = await Pelicula.findAll({ order: [['titulo', order]] });
         if (!movies.length > 0) {
           const err = new Error('No se encontraron peliculas!');
